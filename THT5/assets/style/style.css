@@ -1,0 +1,182 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #000000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.brand {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+.toggle-button {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.toggle-button span {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  margin: 3px 0;
+}
+
+.magnifier {
+  background-image: url('/styling/assets/img/logo_1-removebg-preview.png');
+}
+
+#search-box {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px
+}
+
+#search-button {
+  padding: 5px 10px;
+  background-color: whitesmoke;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#search-button:hover {
+  color: darkcyan;
+  background-color: lightblue;
+}
+
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .toggle-button {
+    display: flex;
+  }
+
+  .search-box {
+    display: none;
+
+  }
+
+  .magnifier {
+    display: flex;
+
+  }
+
+  #search-box {
+    display: none;
+
+  }
+}
+
+.image {
+  display: grid;
+  grid-area: gambar;
+  justify-content: center;
+
+}
+
+.about {
+  display: grid;
+  grid-area: about;
+  background-color: aquamarine;
+  padding: 2rem;
+  justify-content: center;
+  text-align: center;
+}
+
+.services {
+  display: grid;
+  grid-area: service;
+  background-color: blue;
+  padding: 2rem;
+}
+
+.product {
+  display: grid;
+  grid-area: product;
+  background-color: darkcyan;
+  padding: 2rem;
+}
+
+.partner {
+  display: grid;
+  grid-area: partner;
+  background-color: #333;
+  padding: 2rem;
+}
+
+.image img {
+  height: auto;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.contain-main {
+  display: grid;
+  grid-template-areas: 'gambar gambar'
+  'about about'
+    'service product'
+    'partner partner';
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 1fr 0.2fr 1fr;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  height: 30px;
+  background-color: #000000;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+footer .right-reser span {
+  color: white;
+  position: relative;
+  font-size: 10pt;
+}
