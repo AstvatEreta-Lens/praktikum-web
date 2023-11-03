@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style/style-posttest5.css">
+    <title>Porto</title>
+</head>
+
+<body>
+
+    <div class="container"> <!-- navbar-start  -->
+        <nav>
+            <div class="logo">
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Experience</a></li>
+                <li><a href="#">Portofolio</a></li>
+                <li><a href="#">Contact</a></li>
+                <hr>
+            </ul>
+        </nav>
+
+        <div class="contain">
+            <div class="intro-text">
+                <p>Hai Saya Ahmad Al Wabil. Saya adalah Mahasiswa Ilmu Komputer semester 5 di Universitas Pertamina</p>
+            </div>
+            <div class="desc-text">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint molestiae consectetur recusandae totam
+                cum unde illum. Quas, officia! Officia exercitationem natus corrupti quis. Placeat facere commodi
+                perspiciatis quaerat mollitia vitae recusandae, consequuntur neque consectetur quibusdam repellendus
+                deleniti dolore quasi nisi vero in laudantium illum hic labore dignissimos vitae nobis.
+            </div>
+        </div>
+        <div class="image">
+            <img src="/assets/img/potosaya.jpeg" alt="">
+        </div>
+        <div id="form-market">
+            <div class="cont-input">
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            <h3>Form Marketplace</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="barang">Barang : </label></th>
+                        <th>
+                            <select name="barang" id="barang-t">
+                                <option value="1000">Sabun</option>
+                                <option value="4000">Detergent</option>
+                                <option value="10000">Pasta Gigi</option>
+                                <option value="3000">Shampo</option>
+                                <option value="15000">Fashwash</option>
+                            </select>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th><label for="jumlah">Jumlah : </label></th>
+                        <th><input type="number" name="jumlah" id="jumlah-t"></th>
+                    </tr>
+                    <tr>
+                        <th> <label for="voucher">Voucher : </label></th>
+                        <th><input type="text" name="voucher" id="voucher-t"></th>
+                    </tr>
+                    <tr>
+                        <th><input type="submit" id="buy"></th>
+                    </tr>
+                </table>
+
+
+            </div>
+            <div class="cont-output">
+                <p>Nama Pesanan: <span id="order-name"></span></p>
+                <p>Jumlah Pesanan: <span id="jumlah-pesanan"></span></p>
+                <p>Total Diskon: <span id="total-diskon"></span></p>
+                <p>Total harga: <span id="total-harga"></span></p>
+            </div>
+        </div>
+        <div class="footer">
+            <footer>
+                <div class="copyright">
+                    <h3>| Ahmad Al Wabil |</h3>
+                    <p>copyright @ 2023 All Right Reserved | Ahmad Al Wabil</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="/assets/script/script.js"></script>
+</body>
+
+</html>

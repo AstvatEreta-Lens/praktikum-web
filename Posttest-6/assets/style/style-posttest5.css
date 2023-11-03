@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+nav {
+    display: grid;
+    grid-area: nav;
+
+}
+
+.contain {
+    display: grid;
+    grid-area: contain;
+
+}
+
+.image {
+    display: grid;
+    grid-area: gambar;
+
+    
+}
+
+#form-market{
+    display: grid;
+    grid-area: form;
+}
+
+.footer {
+    display: grid;
+    grid-area: footer;
+
+
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 'nav nav'
+        'contain gambar '
+        'form form'
+        'footer footer ';
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 0.05fr 0.5fr 0.05fr;
+
+}
+
+#form-market{
+    height: auto;
+    background-color: antiquewhite; 
+    box-shadow: 5px 5px 8px 0 rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    margin: 2em;
+    align-items: center;
+    justify-content: center;
+
+}
+.image img{
+    width: 300px;
+    height: auto;
+    border-radius: 10%;
+    margin-left: 50%;
+    margin-top: 3%;
+}
+nav ul {
+    list-style: none;
+
+}
+nav a {
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 3%;
+
+}
+
+.contain .intro-text{
+    margin-top: 10%;
+    margin-left: 15%;
+    margin-right: 1%;
+    font-size: 15pt;
+
+}
+.contain .desc-text{
+    margin-left: 15%;
+    font-size: 11pt;
+    margin-right: 1%;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.copyright h3{
+    font-size: 12pt;
+    text-align: center;
+    font-weight: bold;
+}
+
+.copyright p{
+    font-size: 12pt;
+}
+
+
+
+.cont-input table th{
+    text-align: left;
+    padding: 10px;
+}
+
