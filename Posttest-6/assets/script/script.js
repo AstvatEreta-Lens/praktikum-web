@@ -16,7 +16,7 @@ document.getElementById("buy").addEventListener("click", function(event) {
     var diskon = 0;
     if (voucherCode === "DISKON10") {
         diskon = 0.1 * totalHarga; // Diskon 10%
-    } else if (voucherCode === "DISKON20") {
+    } else if (voucherCode === "ASPRAKLEONGANTENG") {
         diskon = 0.2 * totalHarga; // Diskon 20%
     }
 
