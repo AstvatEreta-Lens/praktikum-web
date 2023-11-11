@@ -32,8 +32,10 @@ body {
     justify-content: center;
     width: 80px;
     height: 80px;
-    background-color: #ffffff;
-    border: 1px solid #000000;
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+  
+    /* border: 1px solid #000000; */
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.3);
     font-size: 24px;
     border-radius: 10px;
     cursor: pointer;
@@ -70,11 +72,17 @@ body {
 .dark-mode .cell {
     background-color: #333333;
     color: #ffffff;
-    border: 1px solid white;
+    /* border: 1px solid rgb(182, 182, 182); */
+    /* box-shadow: 1px 4px 6px rgba(155, 155, 155, 0.3); */
+    background: linear-gradient(45deg, #ff8800, #ff00f2);
+    /* box-shadow: 0 0 20px rgba(173, 216, 230, 0.8), 0 0 40px rgba(173, 216, 230, 0.6), 0 0 60px rgba(173, 216, 230, 0.4), 0 0 80px rgba(173, 216, 230, 0.2); */
 }
 
 .dark-mode .cell:hover {
     background-color: #555555;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2), 0 0 40px rgba(255, 255, 255, 0.4), 0 0 60px rgba(255, 255, 255, 0.6), 0 0 80px rgba(255, 0, 242, 0.8);
+  
+    /* box-shadow: 0 0 20px rgba(173, 216, 230, 0.2), 0 0 40px rgba(173, 216, 230, 0.4), 0 0 60px rgba(173, 216, 230, 0.6), 0 0 80px rgba(173, 216, 230, 0.8); */
 }
 
 .dark-mode .status {
@@ -84,4 +92,35 @@ body {
 .dark-mode .board
 {
     box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
+}
+.dark-mode footer{
+    margin-top:1em;
+    padding: 0.3em 2em 0.3em 2em;
+    z-index: -1;
+    position: relative;
+    background-color: #007ff5;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 1rem;
+    background: linear-gradient(45deg, #ff8800, #ff00f2);
+  
+}
+
+.hidden{
+    display: none;
+}
+
+footer{
+    margin-top:1em;
+    padding: 0.3em 2em 0.3em 2em;
+    z-index: -1;
+    position: relative;
+    background-color: #007ff5;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 1rem;
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+  
 }

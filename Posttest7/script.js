@@ -1,17 +1,21 @@
-const board = document.getElementById('board');
-const cells = document.querySelectorAll('.cell');
-const status = document.getElementById('status');
-const resetButton = document.getElementById('reset');
-const toggleDarkModeButton = document.getElementById('toggleDarkMode');
+//Javascript (naskah jawa)
 
-let currentPlayer = 'X';
-let gameBoard = ['', '', '', '', '', '', '', '', ''];
-let gameActive = true;
-let darkMode = false;
+const papan = document.getElementById('board');
+const kolom = document.querySelectorAll('.cell');
+const displayStatus = document.getElementById('status');
+const tombolReset = document.getElementById('reset');
+const tombotToggleDarkMode = document.getElementById('toggleDarkMode');
+const soundBackground = document.getElementById('soundBack')
+
+var pemainSekarang = 'X';
+var papanPermainan = ['', '', '', '', '', '', '', '', ''];
+var gameActive = true;
+var darkMode = false;
+
 
 // cek pemenang
-const checkWinner = () => {
-  const winningCombinations = [
+const cekPemenang = () => {
+  const kombinasiUntukMenang = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -22,67 +26,72 @@ const checkWinner = () => {
     [2, 4, 6]
   ];
 
-  for (const combination of winningCombinations) {
-    const [a, b, c] = combination;
-    if (gameBoard[a] && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c]) {
+  for (const kombinasi of kombinasiUntukMenang) {
+    const [a, b, c] = kombinasi;
+    if (papanPermainan[a] && papanPermainan[a] === papanPermainan[b] && papanPermainan[a] === papanPermainan[c]) {
       gameActive = false;
-      return gameBoard[a];
+      return papanPermainan[a];
     }
   }
 
-  if (!gameBoard.includes('')) {
+  if (!papanPermainan.includes('')) {
     gameActive = false;
-    return 'Draw';
+    return 'Seri';
   }
 
   return null;
 };
 
 // fungsi untuk handle cell click
-const handleCellClick = (index) => {
-  if (!gameActive || gameBoard[index] !== '') return;
+const handleKlikKolom = (index) => {
+  if (!gameActive || papanPermainan[index] !== '') return;
 
-  gameBoard[index] = currentPlayer;
-  cells[index].textContent = currentPlayer;
-  const winner = checkWinner();
+  papanPermainan[index] = pemainSekarang;
+  kolom[index].textContent = pemainSekarang;
+  const pemenang = cekPemenang();
 
-  if (winner) {
-    if (winner === 'Draw') {
-      status.textContent = 'Permainan Seri!';
+  if (pemenang) {
+    if (pemenang === 'Seri') {
+      displayStatus.textContent = 'Permainan Seri!';
     } else {
-      status.textContent = `${winner} Menang!`;
+      displayStatus.textContent = `${pemenang} Menang!`;
     }
   } else {
-    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-    status.textContent = `Giliran Player ${currentPlayer}`;
+    pemainSekarang = pemainSekarang === 'X' ? 'O' : 'X';
+    displayStatus.textContent = `Giliran Player ${pemainSekarang}`;
   }
 };
 
 // fungsi reset game
-const resetGame = () => {
-  gameBoard = ['', '', '', '', '', '', '', '', ''];
+const restartGame = () => {
+  papanPermainan = ['', '', '', '', '', '', '', '', ''];
   gameActive = true;
-  currentPlayer = 'X';
-  status.textContent = `Giliran Player ${currentPlayer}`;
-  cells.forEach(cell => cell.textContent = '');
+  pemainSekarang = pemainSekarang;
+  pemainSekarang =pemainSekarang === 'X' ? 'O': 'X';
+  displayStatus.textContent = `Giliran Player ${pemainSekarang}`;
+  kolom.forEach(cell => cell.textContent = '');
+  soundBackground.currentTime = 0;
+  soundBackground.play();
+
 };
 
-// Event listeners
-cells.forEach((cell, index) => {
-  cell.addEventListener('click', () => handleCellClick(index));
+
+kolom.forEach((cell, index) => {
+  cell.addEventListener('click', () => handleKlikKolom(index));
 });
 
-resetButton.addEventListener('click', resetGame);
+tombolReset.addEventListener('click', restartGame);
 
-toggleDarkModeButton.addEventListener('click', () => {
+tombotToggleDarkMode.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
   darkMode = !darkMode;
   if (darkMode) {
-    toggleDarkModeButton.textContent = 'Toggle Light Mode';
+    tombotToggleDarkMode.textContent = 'Mode Terang ?';
   } else {
-    toggleDarkModeButton.textContent = 'Toggle Dark Mode';
+    tombotToggleDarkMode.textContent = 'Mode Gelap ?';
   }
 });
 
-// Initial status message
-status.textContent = `Giliran Player ${currentPlayer}`;
+
+displayStatus.textContent = `Giliran Player ${currentPlayer}`;
+soundBackground.play()
