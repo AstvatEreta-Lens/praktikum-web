@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posttest 8</title>
+</head>
+
+<body>
+    <h2>HITUNG IPK</h2>
+    <form action="hitungIPK.php" method="post">
+        <label for="nilaikuliah">Nilai Matakuliah 1:</label>
+        <input type="text" name="nilai[]"  id="score" required>
+
+        <div id="kolom"></div>
+
+        <button type="button" id="add">+ add</button>
+        <input type="submit" value="Hitung IPK">
+    </form>
+    <script>
+
+        var inter = 2;
+        const score = document.getElementById('score')
+        document.getElementById('add').addEventListener('click', function () {
+            
+
+            var newLabel = document.createElement('label');
+            newLabel.setAttribute('for', 'nilai' + inter);
+            newLabel.textContent = 'Nilai Matakuliah ' + inter + ':';
+
+            var newInput = document.createElement('input');
+            newInput.type = 'text'  
+            newInput.name = 'nilai[]' + (inter++)
+            newInput.placeholder = 'Nilai Matakuliah ' + (inter - 1)
+
+            document.getElementById('kolom').appendChild(newLabel);
+            document.getElementById('kolom').appendChild(newInput);
+            document.getElementById('kolom').appendChild(document.createElement('br'));
+
+            
+        });
+
+    </script>
+
+</body>
+</html>
